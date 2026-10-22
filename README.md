@@ -42,6 +42,25 @@ python -m omicron --details examples/rucksack.json
 python -m omicron --details examples/rucksack.json --tone "locker und jung" --language Englisch --json
 ```
 
+**Viele Produkte aus einer CSV-Datei**
+
+Lege eine Datei `produkte.csv` in den Hauptordner. Sie braucht die Spalten
+`name, kategorie, material, features, preis, zielgruppe, output`
+(Beispiel: `examples/produkte.csv`).
+
+```bash
+python -m omicron --csv                       # liest produkte.csv, schreibt produkte_fertig.csv
+python -m omicron --csv meine.csv --output fertig.csv
+```
+
+- Omicron schreibt für jede Zeile eine Beschreibung in die Spalte `output`.
+- Mehrere Features trennst du in einer Zelle mit `;` (oder mit `,` innerhalb von Anführungszeichen).
+- Der Preis darf `89.90`, `89,90` oder `89,90 €` lauten.
+- Komma und Semikolon als Trennzeichen werden erkannt; die Ausgabe nutzt dasselbe Trennzeichen.
+- Omicron nennt nur Features aus der Tabelle. Maße, Farben und andere Angaben, die
+  nicht in der Tabelle stehen, gelten als unbekannt und werden nicht erwähnt.
+- Schlägt eine Zeile fehl, steht `FEHLER: …` in ihrer Spalte `output`. Die anderen Zeilen laufen weiter.
+
 **In Python**
 
 ```python
