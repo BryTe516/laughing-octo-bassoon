@@ -1,0 +1,12 @@
+{
+  "name": "PendlerPack Pro",
+  "category": "Rucksack",
+  "features": ["Wasserdicht", "Gepolstertes Laptopfach bis 16 Zoll", "Reflektierende Details", "Ergonomische Schultergurte"],
+  "material": "Recyceltes Polyester mit TPU-Beschichtung",
+  "price": 89.90,
+  "currency": "EUR",
+  "target_audience": "Fahrrad- und ÖPNV-Pendler",
+  "dimensions": "45 x 30 x 15 cm",
+  "colors": ["Schwarz", "Olivgrün"],
+  "additional_info": "Volumen 22 Liter, Gewicht 850 g"
+}
