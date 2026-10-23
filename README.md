@@ -42,6 +42,21 @@ python -m omicron --details examples/rucksack.json
 python -m omicron --details examples/rucksack.json --tone "locker und jung" --language Englisch --json
 ```
 
+**Viele Produkte aus einer CSV (CSV-Modus)**
+
+```bash
+python -m omicron --csv produkte_omicron-mira.1.1.erstversuch.csv
+python -m omicron --csv produkte.csv --output beschreibungen.csv --json
+```
+
+Jede Zeile ist ein Produkt. Omicron schreibt die Beschreibung in die Spalte `output`
+(ohne `--output` direkt in die Eingabedatei). Erkannte Spalten: `name` (Pflicht),
+`kategorie`, `material`, `features` (kommagetrennt), `preis` (z. B. `39.90 €`),
+`waehrung`, `zielgruppe`, `masse`, `farben`, `zusatzinfo` – oder die englischen
+Feldnamen aus `omicron/schemas.py`. Fehlende Angaben bleiben leer. Zeilen mit
+vorhandener Ausgabe werden übersprungen, ein abgebrochener Lauf lässt sich also
+einfach neu starten.
+
 **In Python**
 
 ```python
